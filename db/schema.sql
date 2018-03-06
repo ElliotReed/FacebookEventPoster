@@ -4,6 +4,7 @@ USE facebook_poster;
 
 CREATE TABLE event (
     id
+    client_id
     title
     DATE
     START
