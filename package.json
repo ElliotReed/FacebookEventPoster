@@ -1,7 +1,7 @@
 {
-  "name": "post-author-joins",
+  "name": "Facebook Event Poster",
   "version": "1.0.0",
-  "description": "",
+  "description": "An app to post events to Facebook",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,8 +9,8 @@
     "watch": "nodemon server.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Elliot Reed, Elshibani Omar, Lydia Young",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
