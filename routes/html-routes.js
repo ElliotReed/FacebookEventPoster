@@ -14,7 +14,14 @@ module.exports = function(app) {
 
   // index route loads view.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/blog.html"));
+    db.event.findAll(function(data) {
+      var hbsObject = {
+        event: data
+      };
+      console.log(hbsObject);
+      res.render("index", hbsObject);
+    });
+    // res.sendFile(path.join(__dirname, "../public/blog.html"));
   });
 
   // cms route loads cms.html
@@ -29,7 +36,7 @@ module.exports = function(app) {
 
   // authors route loads author-manager.html
   app.get("/authors", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/author-manager.html"));
+    // res.sendFile(path.join(__dirname, "../public/author-manager.html"));
   });
 
 };
