@@ -28,7 +28,7 @@ var db = require("../models");
     });
   });
 
-  router.event("/api/clients", function(req, res) {
+  router.post("/api/clients", function(req, res) {
     // Create new client
     db.Client.create(req.body).then(function(dbClient) {
       res.json(dbClient);
