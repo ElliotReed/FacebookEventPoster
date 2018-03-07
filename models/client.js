@@ -4,34 +4,35 @@ module.exports = function(sequelize, DataTypes) {
     name: {
       type: DataTypes.STRING,
       validate: {
-        {allowNull: false}
+        allowNull: false
       }
-    }
+    },
     // Client's email
     // isEmail valiation checks for email format
     email: {
-      type: DataTypes.STRING, 
-      validate:
-        {isEmail: true,
-        allowNull: false}
-    }
+      type: DataTypes.STRING,
+      validate: {
+        isEmail: true,
+        allowNull: false
+      }
+    },
     // Client's password
     password: {
       type: DataTypes.STRING,
       validate: {
-        allowNullNull: false}
-      }
-    }, {
-      // Encrypts password ???
-      instanceMethods: {
-        generateHash: function (password) {
-          return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null)
-        },
-        validPassword: function (password) {
-          return bcrypt.compareSync(password, this.password)
-        }
+        allowNullNull: false
       }
     },
+
+    // Encrypts password ???
+    // instanceMethods: {
+    //   generateHash: function(password) {
+    //     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+    //   },
+    //   validPassword: function(password) {
+    //     return bcrypt.compareSync(password, this.password);
+    //   }
+    // },
     freezeTableName: true
   });
 
