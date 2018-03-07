@@ -22,7 +22,8 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         allowNullNull: false
       }
-    },
+    }
+  },
       // // Encrypts password ???
       // instanceMethods: {
       //   generateHash: function (password) {
@@ -32,6 +33,7 @@ module.exports = function(sequelize, DataTypes) {
       //     return bcrypt.compareSync(password, this.password)
       //   
       // },
+  {
     freezeTableName: true
   });
 
