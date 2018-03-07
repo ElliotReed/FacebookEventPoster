@@ -9,7 +9,7 @@ var router = express.Router();
 // var path = require("path");
 
 // Import the model (cat.js) to use its database functions.
-var db = require("../models");
+// var db = require("../models");
 
 // Routes
 // =============================================================

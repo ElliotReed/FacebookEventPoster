@@ -11,9 +11,10 @@ module.exports = function(sequelize, DataTypes) {
     // isEmail valiation checks for email format
     email: {
       type: DataTypes.STRING, 
-      validate:
-        {isEmail: true,
-        allowNull: false}
+      validate: {
+        isEmail: true,
+        allowNull: false
+      }
     },
     // Client's password
     password: {
