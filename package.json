@@ -1,5 +1,5 @@
 {
-  "name": "Facebook Event Poster",
+  "name": "FacebookEventPoster",
   "version": "1.0.0",
   "description": "An app to post events to Facebook",
   "main": "server.js",
