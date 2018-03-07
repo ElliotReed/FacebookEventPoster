@@ -42,8 +42,8 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: false
     }
   },
-  {
-    freezeTableName: true
+    {
+      freezeTableName: true
   });
 
   Event.associate = function(models) {

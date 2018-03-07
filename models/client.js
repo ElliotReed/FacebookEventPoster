@@ -24,19 +24,17 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   },
-                               
-
-    // Encrypts password ???
-    // instanceMethods: {
-    //   generateHash: function(password) {
-    //     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-    //   },
-    //   validPassword: function(password) {
-    //     return bcrypt.compareSync(password, this.password);
-    //   }
-    // },
-  {
-    freezeTableName: true
+      // // Encrypts password ???
+      // instanceMethods: {
+      //   generateHash: function (password) {
+      //     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null)
+      //   },
+      //   validPassword: function (password) {
+      //     return bcrypt.compareSync(password, this.password)
+      //   
+      // },
+    {
+      freezeTableName: true
   });
 
   Client.associate = function(models) {
