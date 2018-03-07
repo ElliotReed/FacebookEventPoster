@@ -20,6 +20,19 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       validate: {
         allowNullNull: false
+<<<<<<< HEAD
+=======
+      }
+    }, {
+      // Encrypts password ???
+      instanceMethods: {
+        generateHash: function (password) {
+          return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null)
+        },
+        validPassword: function (password) {
+          return bcrypt.compareSync(password, this.password)
+        }
+>>>>>>> d0f214b18b07d30730121141cb6c3b5d51a74b38
       }
     },
       // // Encrypts password ???
