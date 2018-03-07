@@ -37,6 +37,11 @@ require("./routes/html-routes.js")(app);
 require("./routes/client-api-routes.js")(app);
 require("./routes/event-api-routes.js")(app);
 
+// Import routes and give the server access to them.
+var routes = require("./controllers");
+
+app.use(routes);
+
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({ force: true }).then(function() {
