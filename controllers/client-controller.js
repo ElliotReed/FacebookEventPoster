@@ -1,13 +1,9 @@
-// Dependencies
-// =============================================================
-var express = require("express");
-
-var router = express.Router();
 
 // Require our models
 var db = require("../models");
 
-  router.get("/api/clients", function(req, res) {
+module.exports = function(app) {
+  app.get("/api/clients", function(req, res) {
     // Find all clients and their events
     db.Client.findAll({
       include: [db.event]
@@ -16,7 +12,7 @@ var db = require("../models");
     });
   });
 
-  router.get("/api/clients/:id", function(req, res) {
+  app.get("/api/clients/:id", function(req, res) {
     // Find a single client and their events
     db.Client.findOne({
       where: {
@@ -28,14 +24,14 @@ var db = require("../models");
     });
   });
 
-  router.post("/api/clients", function(req, res) {
+  app.post("/api/clients", function(req, res) {
     // Create new client
     db.Client.create(req.body).then(function(dbClient) {
       res.json(dbClient);
     });
   });
 
-  router.delete("/api/clients/:id", function(req, res) {
+  app.delete("/api/clients/:id", function(req, res) {
     // Delete client
     db.Client.destroy({
       where: {
@@ -45,5 +41,4 @@ var db = require("../models");
       res.json(dbClient);
     });
   });
-
-  module.exports = router;
+}
