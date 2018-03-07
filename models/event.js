@@ -40,8 +40,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false
-    },
-    freezeTableName: true
+    }
+  },
+    {
+      freezeTableName: true
   });
 
   Event.associate = function(models) {
