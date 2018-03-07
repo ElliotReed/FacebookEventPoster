@@ -4,9 +4,9 @@ module.exports = function(sequelize, DataTypes) {
     name: {
       type: DataTypes.STRING,
       validate: {
-        {allowNull: false}
+        allowNull: false
       }
-    }
+    },
     // Client's email
     // isEmail valiation checks for email format
     email: {
@@ -14,12 +14,12 @@ module.exports = function(sequelize, DataTypes) {
       validate:
         {isEmail: true,
         allowNull: false}
-    }
+    },
     // Client's password
     password: {
       type: DataTypes.STRING,
       validate: {
-        allowNullNull: false}
+        allowNullNull: false
       }
     }, {
       // Encrypts password ???
