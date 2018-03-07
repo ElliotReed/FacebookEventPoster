@@ -1,7 +1,7 @@
  INSERT INTO event
  (client_id, title, date, start, end, description, location, public, posted)
  VALUES
-(1,"The Mars Show", 2018-04-15, 7:00, 10:00, "Blah blah blah", "The Ogden Theatre", true, false),
+(1,"The Mars Show", 2018-03-07 14:10:19, 2018-03-07 14:10:19, 2018-03-07 14:10:19, "Blah blah blah", "The Ogden Theatre", true, false),
 (1,"The Mercury Show", 2018-04-16, 8:00, 9:00, "Blah blah blah", "The Nash Theatre", true, false),
 (2,"The Venus Show", 2018-04-17, 8:30, 10:00, "Blah blah blah", "The Oriental Theatre", true, false),
 (2,"The Earth Show", 2018-04-18, 8:00, 10:00, "Blah blah blah", "The Ogden Theatre", true, false)

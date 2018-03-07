@@ -36,7 +36,7 @@ app.set("view engine", "handlebars");
 // =============================================================
 require("./controllers/html-controller.js")(app);
 require("./controllers/event-controller.js")(app);
-require("./controllers/client-controller.js")(app);=======================================================
+require("./controllers/client-controller.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
