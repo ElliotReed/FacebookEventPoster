@@ -36,7 +36,15 @@ app.set("view engine", "handlebars");
 // =============================================================
 
 // Import routes and give the server access to them.
-var routes = require('require-all')(__dirname + "/controllers");
+// var routes = require('require-all')(__dirname + "/controllers");
+
+var routes = require('require-all')({
+  dirname     :  __dirname + '/controllers',
+  filter      :  /(.+Controller)\.js$/,
+  resolve     : function (Route) {
+    return new Route();
+  }
+});
 
 app.use(routes);
 
