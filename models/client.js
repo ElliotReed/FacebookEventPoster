@@ -22,16 +22,20 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         allowNullNull: false
       }
-    },
-      // // Encrypts password ???
-      // instanceMethods: {
-      //   generateHash: function (password) {
-      //     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null)
-      //   },
-      //   validPassword: function (password) {
-      //     return bcrypt.compareSync(password, this.password)
-      //   
-      // },
+    }
+  },
+                               
+
+    // Encrypts password ???
+    // instanceMethods: {
+    //   generateHash: function(password) {
+    //     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+    //   },
+    //   validPassword: function(password) {
+    //     return bcrypt.compareSync(password, this.password);
+    //   }
+    // },
+  {
     freezeTableName: true
   });
 
