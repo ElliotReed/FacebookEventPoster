@@ -6,7 +6,7 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
-var path = require('path');
+// var path = require('path');
 
 // Sets up the Express App
 // =============================================================
@@ -34,11 +34,14 @@ app.set("view engine", "handlebars");
 
 // Routes
 // =============================================================
+require("./controllers/html-controller.js")(app);
+require("./controllers/event-controller.js")(app);
+require("./controllers/client-controller.js")(app);=======================================================
 
 // Import routes and give the server access to them.
-var routes = require('require-all')(__dirname + "/controllers");
+// var routes = require('require-all')(__dirname + "/controllers");
 
-app.use(routes);
+// app.use(routes);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
