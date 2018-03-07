@@ -20,14 +20,20 @@ module.exports = function(app){
   
     // index route loads view.html
     app.get("/", function(req, res) {
-      res.send('Hello');
-      // db.event.findAll(function(data) {
-      //   var hbsObject = {
-      //     event: data
-      //   };
-      //   console.log(hbsObject);
-      //   res.render("index", hbsObject);
-      // });
+      // res.send('Hello');
+      var query = {
+        ClientId: 1
+      };
+      db.Event.findAll({
+        where: query,
+        include: [db.Client]
+      }).then(function(data) {
+        var hbsObject = {
+          event: data
+        };
+        console.log(hbsObject);
+        res.render("index", hbsObject);
+      });
       // res.sendFile(path.join(__dirname, "../public/blog.html"));
     });
   
