@@ -10,16 +10,21 @@ module.exports = function(sequelize, DataTypes) {
     // Client's email
     // isEmail valiation checks for email format
     email: {
-
+      type: DataTypes.STRING, 
+      validate: {
+        isEmail: true,
+        allowNull: false
+      }
     },
     // Client's password
     password: {
       type: DataTypes.STRING,
       validate: {
         allowNullNull: false
-
       }
-    },
+    }
+  },
+                               
 
     // Encrypts password ???
     // instanceMethods: {
@@ -30,6 +35,7 @@ module.exports = function(sequelize, DataTypes) {
     //     return bcrypt.compareSync(password, this.password);
     //   }
     // },
+  {
     freezeTableName: true
   });
 
