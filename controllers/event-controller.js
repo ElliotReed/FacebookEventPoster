@@ -47,7 +47,7 @@ router.get("/api/event/:id", function(req, res) {
 });
 
 // EVENT route for saving a new event
-router.event("/api/event", function(req, res) {
+router.post("/api/event", function(req, res) {
   db.Event.create(req.body).then(function(dbEvent) {
     res.json(dbEvent);
   });
