@@ -1,36 +1,50 @@
 {{!-- Home landing page to log --}}
 
-<h1>Events {{event.client.name}}</h1>
+<h4 class="modal-title" id="myModalLabel">Add a new event</h4>
+  <form class="form-inline">
+  {{!-- Image --}}
 
-<h2>{{ event.title}}</h2>
-
-<ul>
-  {{#each event}}
-  <li>{{ event.title}}
-
-      <button type="submit">Post to Facebook</button>
-  </li>
-    {{!-- {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}} --}}
-  {{/each}}
-</ul>
-
-
-
-<h2>Add an event</h2>
-<form class="create-form">
-
+  {{!-- Event Title --}}
   <div class="form-group">
-    <label for="ca">Event Title:</label>
-    <input type="text" id="ca" name="title">
-  </div>
+          <label class="sr-only" for="title">Event Name</label>
+          <input type="text" class="form-control" id="title" placeholder="Event Name">
+      </div>
 
-  <div class="form-group">
-    <label for="sleepy">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div>
+      {{!-- Location --}}
+      <div class="form-group">
+          <label class="sr-only" for="location">Location</label>
+          <input type="text" class="form-control" id="location" placeholder="Include a place name or address">
+      </div>
 
-  <button type="submit">Add Cat</button>
-</form>
+      {{!-- Event Date --}}
+      <div class="form-group">
+          <label class="sr-only" for="date">Event Date</label>
+          <input type="date" class="form-control" id="date">
+      </div>
+
+      {{!-- Event Start Time --}}
+      <div class="form-group">
+          <label class="sr-only" for="start">Password</label>
+          <input type="time" class="form-control" id="start">
+                    </div>
+
+      {{!-- Event End Time --}}
+      <div class="form-group">
+          <label class="sr-only" for="end">Password</label>
+          <input type="time" class="form-control" id="end">
+      </div>
+
+       {{!-- Description --}}
+      <div class="form-group">
+          <label class="sr-only" for="description">Description</label>
+          <textarea class="form-control" rows="4" id="description"></textarea>
+      </div>
+
+      {{!-- Keywords --}}
+
+
+      {{!-- Footer: Submit button --}}
+      <div class="modal-footer">
+          <button type="submit" class="btn btn-default">Create</button>
+      </div>
+  </form>
