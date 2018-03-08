@@ -53,6 +53,9 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
   };
+  Event.sync(function() {
+    force: true;
+  });
 
   return Event;
 };
