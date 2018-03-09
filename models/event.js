@@ -12,11 +12,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     start: {
-      type: DataTypes.DATE,
+      type: DataTypes.TIME,
       allowNull: false
     },
     end: {
-      type: DataTypes.DATE,
+      type: DataTypes.TIME,
       allowNull: false
     },
     description: {
@@ -55,6 +55,7 @@ module.exports = function(sequelize, DataTypes) {
   };
   Event.sync(function() {
     force: true;
+    logging: console.log;
   });
 
   return Event;
