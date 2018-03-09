@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     date: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false
     },
     start: {
@@ -40,6 +40,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false
+    },
+    ClientId: {
+      type: DataTypes.INTEGER,
+      defaultValue: 1
     }
   },
     {
@@ -54,8 +58,7 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
   Event.sync(function() {
-    force: true;
-    logging: console.log;
+    force: false
   });
 
   return Event;

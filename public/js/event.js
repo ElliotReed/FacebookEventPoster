@@ -103,7 +103,6 @@ $(document).ready(function() {
     var newEventTitle = $("<h2>");
     var newEventDate = $("<small>");
     var newEventclient = $("<h5>");
-    newEventclient.text("Written by: " + event.client.name);
     newEventclient.css({
       float: "right",
       color: "blue",
@@ -128,7 +127,7 @@ $(document).ready(function() {
     return newEventPanel;
   }
 
-  // This function figures out whichwEvent we want to delete and then calls deletwEvent
+  // This function figures out whichwEvent we want to delete and then calls deleteEvent
   function handleEventDelete() {
     var currentEvent = $(this)
       .parent()
@@ -149,15 +148,10 @@ $(document).ready(function() {
   // This function displays a messgae when there are no events
   function displayEmpty(id) {
     var query = window.location.search;
-    var partial = "";
-    if (id) {
-      partial = " for client #" + id;
-    }
     eventContainer.empty();
     var messageh2 = $("<h2>");
     messageh2.css({ "text-align": "center", "margin-top": "50px" });
-    messageh2.html("No events yet" + partial + ", navigate <a href='/cms" + query +
-    "'>here</a> in order to get started.");
+    messageh2.html("No events yet. Add an event in order to get started.");
     eventContainer.append(messageh2);
   }
 
