@@ -103,7 +103,6 @@ $(document).ready(function() {
     var newEventTitle = $("<h2>");
     var newEventDate = $("<small>");
     var newEventclient = $("<h5>");
-    newEventclient.text("Written by: " + event.client.name);
     newEventclient.css({
       float: "right",
       color: "blue",
