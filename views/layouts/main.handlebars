@@ -6,35 +6,11 @@
 	<link rel="stylesheet" href="/css/styles.css" type="text/css" />
 	<title>Facebook Event Poster</title>
 	<script src="https://code.jquery.com/jquery.js"></script> {{!-- // Need to change depending on our public/js files --}}
-	<script src="/js/facebook.js"></script>
 </head>
 
 <body>
-	<script>
-		window.fbAsyncInit = function () {
-			FB.init({
-				appId: '189718291635703',
-				autoLogAppEvents: true,
-				xfbml: true,
-				version: 'v2.12'
-			});
-		};
-
-		(function (d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) { return; }
-			js = d.createElement(s); js.id = id;
-			js.src = "https://connect.facebook.net/en_US/sdk.js";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-
-		FB.ui(
-			{
-				method: 'share',
-				href: 'https://developers.facebook.com/docs/'
-			}, function (response) { });
-
-	</script> {{{ body }}}
+	<script src="/js/facebook.js"></script>
+ {{{ body }}}
 </body>
 
 </html>
