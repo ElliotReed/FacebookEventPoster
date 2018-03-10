@@ -3,14 +3,26 @@
 
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="/css/styles.css" type="text/css" />
-	<title>Facebook Event Poster</title>
-	<script src="https://code.jquery.com/jquery.js"></script> {{!-- // Need to change depending on our public/js files --}}
-</head>
-
-<body>
-	<script src="/js/facebook.js"></script>
- {{{ body }}}
-</body>
-
+		<title>Facebook Event Poster</title>
+		{{!-- Font Awesome for FB logo --}}
+		<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+		{{!-- Bootstrap styling --}}
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		{{!-- jQuery --}}
+		<script src="https://code.jquery.com/jquery.js"></script>
+		{{!-- Bootstrap JS --}}
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		{{!-- Event js --}}
+		<script src="/js/event.js"></script>
+		{{!-- client js --}}
+		<script src="/js/client.js"></script>
+		{{!-- Our Custom Style Sheet --}}
+		<link rel="stylesheet" href="/css/styles.css" type="text/css" />
+		{{!-- Our Custom Favicon --}}
+		<link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
+	</head>
+	<body>
+		{{{ body }}}
+	</body>
 </html>

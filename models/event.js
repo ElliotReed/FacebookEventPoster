@@ -4,19 +4,19 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1]
+        len: [1, 64]
       }
     },
     date: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false
     },
     start: {
-      type: DataTypes.DATE,
+      type: DataTypes.TIME,
       allowNull: false
     },
     end: {
-      type: DataTypes.DATE,
+      type: DataTypes.TIME,
       allowNull: false
     },
     description: {
@@ -40,6 +40,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false
+    },
+    ClientId: {
+      type: DataTypes.INTEGER,
+      defaultValue: 1
     }
   },
     {
@@ -53,6 +57,9 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
   };
+  Event.sync(function() {
+    force: false
+  });
 
   return Event;
 };
