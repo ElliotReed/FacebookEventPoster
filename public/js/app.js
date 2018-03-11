@@ -1,5 +1,5 @@
 // var eventId = 2;
-document.querySelector('.fb-button').addEventListener('click', function() {
+$('.fb-button').on('click', function() {
   eventId = $(this).attr("data-id")
   // console.log(eventId);
   $.ajax({
@@ -18,7 +18,7 @@ document.querySelector('.fb-button').addEventListener('click', function() {
       (eventData.public ? 'This event is open to the public, come on out!' : 'This is a private event.');
     // console.log(postText);
     var postData = { postText: postText, pageId: eventData.pageId };
-    // console.log(postData);
+    console.log(postData);
 
     fbPostIt(postData);
   });
