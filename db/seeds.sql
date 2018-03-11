@@ -1,3 +1,5 @@
+USE facebook_poster;
+
  INSERT INTO event
  (ClientId, title, date, start, end, description, location, public, posted)
  VALUES
