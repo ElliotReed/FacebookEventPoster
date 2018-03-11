@@ -15,6 +15,6 @@ USE facebook_poster;
  INSERT INTO client
  (name, email, password)
  VALUES
-("Elliot Reed","elliot@elliotreed.net","elliot"),
-("Elishibani Omar","amr.omar80@gmail.com","elishibani"),
-("Lydia Young","lydiaryoung@gmail.com","lydia");
+("Elliot Reed", 0000000000000000,"elliot@elliotreed.net","elliot"),
+("Elishibani Omar", 0000000000000000,"amr.omar80@gmail.com","elishibani"),
+("Lydia Young", 2050872278494074,"lydiaryoung@gmail.com","lydia");
