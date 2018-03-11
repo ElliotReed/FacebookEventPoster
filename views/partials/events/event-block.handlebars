@@ -1,8 +1,22 @@
 <li>
-	<h3>{{title}}<small> {{date}} {{start}} - {{end}} </small></h3>
-	<hr>
-	<p>Location: {{location}}</p>
-	<p>{{description}}</p>
+    <div class="panel-heading">
+        <h3 class="panel-title">
+			{{title}}
+			<small>
+				{{date}} {{start}} - {{end}}
+			</small>
+			<button class="btn btn-info" id="edit-event" data-id="{{id}}">
+				EDIT
+			</button>
+			<button class="btn btn-danger" id="delete-event" data-id="{{id}}">
+				DELETE!
+			</button>
+		</h3>
+    </div>
+    <div class="panel-body">
+		<p>Location: {{location}}</p>
+		<p>{{description}}</p>
+    </div>
 
-	<button class="delete-event" data-id="{{id}}">DELETE!</button>
 </li>
+
