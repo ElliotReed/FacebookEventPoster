@@ -1,5 +1,7 @@
+USE facebook_poster;
+
  INSERT INTO event
- (client_id, title, date, start, end, description, location, public, posted)
+ (ClientId, title, date, start, end, description, location, public, posted)
  VALUES
 (1,"The Mars Show", 2018-03-07 14:10:19, 2018-03-07 14:10:19, 2018-03-07 14:10:19, "Blah blah blah", "The Ogden Theatre", true, false),
 (1,"The Mercury Show", 2018-04-16, 8:00, 9:00, "Blah blah blah", "The Nash Theatre", true, false),
