@@ -7,6 +7,13 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       }
     },
+    // Client's page ID
+    pageId: {
+      type: DataTypes.INTEGER,
+      validate: {
+        allowNull: false
+      }
+    },
     // Client's email
     // isEmail valiation checks for email format
     email: {
@@ -24,16 +31,6 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   },
-      // // Encrypts password ???
-      // instanceMethods: {
-      //   generateHash: function (password) {
-      //     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null)
-      //   },
-      //   validPassword: function (password) {
-      //     return bcrypt.compareSync(password, this.password)
-      //   
-      // },
-
   {
       freezeTableName: true
   });
