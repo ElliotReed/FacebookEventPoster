@@ -18,7 +18,7 @@ module.exports = function(app) {
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
   // index route loads view.html
-  app.get("/", function(req, res) {
+  app.get("/account", function(req, res) {
     // res.send('Hello');
     var query = {
       ClientId: 1
@@ -31,21 +31,21 @@ module.exports = function(app) {
         event: data
       };
       console.log(hbsObject);
-      res.render("index", hbsObject);
+      res.render("account", hbsObject);
       // res.end();
     });
     // res.sendFile(path.join(__dirname, "../public/blog.html"));
   });
 
   // cms route loads cms.html
-  app.get("/logintest", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/logintest.html"));
-  });
+  // app.get("/logintest", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../views/logintest.html"));
+  // });
 
   
-  app.get("/posting", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/posting.html"));
-  });
+  // app.get("/posting", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../views/posting.html"));
+  // });
 
   // blog route loads blog.html
   // router.get("/blog", function(req, res) {

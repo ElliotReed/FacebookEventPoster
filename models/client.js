@@ -9,10 +9,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     // Client's page ID
     pageId: {
-      type: DataTypes.INTEGER,
-      validate: {
-        allowNull: false
-      }
+      type: DataTypes.STRING,
+      allowNull: false
     },
     // Client's email
     // isEmail valiation checks for email format

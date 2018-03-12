@@ -6,7 +6,7 @@ $('.fb-button').on('click', function() {
     method: 'get',
     url: '/api/event/' + eventId,
   }).then(function(eventData) {
-    eventData.pageId = '203801840389513';
+    // eventData.pageId = '203801840389513';
     // console.log(eventData);
 
     var postText =
