@@ -10,7 +10,7 @@ $(document).ready(function() {
   }
   
   // Submit button on click will create a new event
-  $("#add-event").on("submit", function(event) {
+  $(".form-inline").on("submit", function(event) {
     // Prevent page from reloading on click
     event.preventDefault();
 
