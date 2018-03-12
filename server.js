@@ -1,35 +1,93 @@
-//  Dependencies
-var express = require("express");
-var bodyParser = require("body-parser");
-// var path = require('path');
+// set up ======================================================
 
-// Sets up the Express App
+var express = require("express");
+var methodO = require("method-override");
+var bodyParser = require("body-parser");
+
 var app = express();
 var PORT = process.env.PORT || 8080;
 
-// Requiring our models for syncing
+var passport = require("passport");
+var flash = require("connect-flash");
+var cookieParser = require("cookie-parser");
+var session = require("express-session"); // cookie session
+
+// import models
 var db = require("./models");
 
-// Sets up the Express app to handle data parsing
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
-// parse application/json
+require("./config/passport")(passport); // pass passport for configuration
+
+// Parse application/x-www-form-urlencoded
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+);
 app.use(bodyParser.json());
 
-// Static directory
+//Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
+app.use(function(err, req, res, next) {
+  console.log(err);
+});
 
-// Set Handlebars.
+// Handlebars
 var exphbs = require("express-handlebars");
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main"
+  })
+);
 app.set("view engine", "handlebars");
 
-// Routes
-require("./controllers/html-controller.js")(app);
-require("./controllers/event-controller.js")(app);
-require("./controllers/client-controller.js")(app);
+// session secret set to a random long mix of keys
+app.use(
+  session({
+    key: "user_sid",
+    resave: false,
+    secret: "mdoieuewjknfdsm,cso9d/apfmng,dsjkuijkfnmwP",
+    saveUninitialized: false,
+    cookie: {
+      expires: 600000,
+      httpOnly: false
+    }
+  })
+);
 
-// Syncing our sequelize models and then starting our Express app
+// set up passport
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+
+// Connect Flash
+app.use(flash());
+
+// Global Vars
+app.use(function(req, res, next) {
+  res.locals.success_msg = req.flash("success_msg");
+  res.locals.error_msg = req.flash("error_msg");
+  res.locals.error = req.flash("error");
+  res.locals.user = req.user || null;
+  next();
+});
+
+app.use(methodO("_method"));
+// require('./config/passport')(passport);
+
+// routes ======================================================
+
+// routes to be listening for
+require("./controllers/event-controller.js")(app);
+var routes = require("./controllers/html-controller");
+var clients = require("./controllers/client-controller");
+
+app.use("/", routes);
+app.use("/clients", clients);
+
+
+// launch ======================================================
+
+// syc db and listen for port 6060 or set port
 db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);

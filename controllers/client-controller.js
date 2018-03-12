@@ -87,7 +87,7 @@ router.post("/login", function(req, res, next) {
       // return res.send({ success: false, message: "authentication failed" });
       return res.render("login");
     }
-
+  
     // ***********************************************************************
     // "Note that when using a custom callback, it becomes the application's
     // responsibility to establish a session (by calling req.login()) and send
@@ -102,29 +102,33 @@ router.post("/login", function(req, res, next) {
       }
 
       console.log();
-      var status = {
-        code: 200,
-        isLoggedIn: true,
-        userId: user.id,
-        firstname: user.firstname,
-        lastname: user.lastname
-      };
-      console.log(user.firstname);
-      console.log(status);
+      // var status = {
+      //   code: 200,
+      //   isLoggedIn: true,
+      //   userId: user.id,
+      //   firstname: user.firstname,
+      //   lastname: user.lastname
+      // };
+      // console.log(user.firstname);
+      // console.log(status);
       var query = {
-        ClientId: status.userId
+        ClientId:  user.id
       };
       db.Event.findAll({
         where: query,
         include: [db.Client]
       }).then(function(data) {
         var hbsObject = {
-          event: data
+          event: data,
+          userId: user.id,
+          firstname: user.firstname,
+          lastname: user.lastname
         };
         console.log(hbsObject);
 
       res.render("account", hbsObject);
-    });
+     });
+  });
   })(req, res, next);
 });
 
