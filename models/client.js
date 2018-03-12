@@ -1,12 +1,18 @@
+var bcrypt = require("bcrypt");
+
 module.exports = function(sequelize, DataTypes) {
   var Client = sequelize.define("Client", {
-    // Client entered name (can be full name, user-name...)
-    name: {
-      type: DataTypes.STRING,
-      validate: {
-        allowNull: false
-      }
-    },
+
+      firstname: {
+        type: DataTypes.STRING,
+        notEmpty: true
+      },
+
+      lastname: {
+        type: DataTypes.STRING,
+        notEmpty: true
+      },
+     
     // Client's page ID
     pageId: {
       type: DataTypes.STRING,
@@ -19,19 +25,27 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         isEmail: true,
         allowNull: false
+      },
+
+      localPassword: {
+        type: DataTypes.STRING,
+        required: true
       }
     },
-    // Client's password
-    password: {
-      type: DataTypes.STRING,
-      validate: {
-        allowNullNull: false
-      }
-    }
-  },
-  {
+    {
       freezeTableName: true
-  });
+    }
+  );
+  // methods ======================
+  // generating a hash
+  Client.generateHash = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+  };
+
+  // checking if password is valid
+  Client.prototype.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.localPassword);
+  };
 
   Client.associate = function(models) {
     // Associating Client with Posts
@@ -40,6 +54,10 @@ module.exports = function(sequelize, DataTypes) {
       onDelete: "cascade"
     });
   };
+
+  Client.sync(function() {
+    force: false;
+  });
 
   return Client;
 };

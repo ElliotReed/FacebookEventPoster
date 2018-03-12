@@ -1,1 +1,59 @@
-{{!-- sign up page --}}
+<h2 class="page-header">Register</h2>
+{{#if signupMessage}}
+<div class="alert alert-danger">{{signupMessage}}</div>
+{{/if}}
+
+<form method="post" action="/clients/signup">
+	<div class="form-group">
+		<label>First Name</label>
+		<input type="text" class="form-control" placeholder="First Name" name="firstname">
+	</div>
+	<div class="form-group">
+		<label>Last Name</label>
+		<input type="text" class="form-control" placeholder="Last Name" name="lastname">
+	</div>
+	<div class="form-group">
+		<label>Page ID</label>
+		<input type="text" class="form-control" placeholder="Page ID" name="pageid">
+	</div>
+	<div class="form-group">
+		<label>Email</label>
+		<span id="email-msg"></span>
+		<input type="email" class="form-control" id="newEmail" placeholder="Email" name="email">
+	</div>
+	<div class="form-group">
+		<label>Password</label>
+		<input type="password" class="form-control" id="newPWd" placeholder="Password" name="password">
+	</div>
+	<button id="signup" type="submit" class="btn btn-info btn-lg disabled" disabled="">Submit</button>
+</form>
+
+<script>
+
+
+	// Sign up form validation
+	$("#newEmail, #newPWd").on('keyup', function () {
+		var email = $('#newEmail').val()
+		var password = $('#newPWd').val()
+		if (email.length > 0 && validateEmail(email) && password.length > 0) {
+			$("#signup").removeClass("disabled");
+			$("#signup").removeAttr('disabled');
+		} else {
+			$("#signup").addClass("disabled");
+			$("#signup").attr('disabled');
+		}
+	})
+
+	// Check for valid email address
+	function validateEmail(str) {
+		var regex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+		if (!regex.test(str)) {
+			$("#email-msg").text("Please enter valid email.").css('color', 'red');
+			return false
+		} else {
+			$("#email-msg").text("");
+			return true
+		}
+	}
+
+</script>
