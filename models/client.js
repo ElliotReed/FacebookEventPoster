@@ -2,6 +2,7 @@ var bcrypt = require("bcrypt");
 
 module.exports = function(sequelize, DataTypes) {
   var Client = sequelize.define("Client", {
+
       firstname: {
         type: DataTypes.STRING,
         notEmpty: true
@@ -11,16 +12,19 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         notEmpty: true
       },
-      // Client's page ID
-      pageId: {
-        type: DataTypes.INTEGER,
+     
+    // Client's page ID
+    pageId: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    // Client's email
+    // isEmail valiation checks for email format
+    email: {
+      type: DataTypes.STRING, 
+      validate: {
+        isEmail: true,
         allowNull: false
-      },
-      email: {
-        type: DataTypes.STRING,
-        validate: {
-          isEmail: true
-        }
       },
 
       localPassword: {

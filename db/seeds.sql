@@ -13,8 +13,8 @@ USE facebook_poster;
 (3,"The Uranus Show", 2018-04-22, 7:30,  9:00, "Blah blah blah", "The Ogden Theatre", true, false);
 
  INSERT INTO client
- (name, email, password)
+ (name, pageId, email, password)
  VALUES
-("Elliot Reed", 0000000000000000,"elliot@elliotreed.net","elliot"),
-("Elishibani Omar", 0000000000000000,"amr.omar80@gmail.com","elishibani"),
-("Lydia Young", 2050872278494074,"lydiaryoung@gmail.com","lydia");
+("Elliot Reed", '203801840389513',"elliot@elliotreed.net","elliot"),
+("Elishibani Omar", '0000000000000000',"amr.omar80@gmail.com","elishibani"),
+("Lydia Young", '2050872278494074',"lydiaryoung@gmail.com","lydia");
