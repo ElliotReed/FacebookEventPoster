@@ -111,11 +111,19 @@ router.post("/login", function(req, res, next) {
       };
       console.log(user.firstname);
       console.log(status);
+      var query = {
+        ClientId: status.userId
+      };
+      db.Event.findAll({
+        where: query,
+        include: [db.Client]
+      }).then(function(data) {
+        var hbsObject = {
+          event: data
+        };
+        console.log(hbsObject);
 
-      res.cookie("user_first", user.firstname);
-      res.cookie("user_last", user.lastname);
-
-      res.render("account", status);
+      res.render("account", hbsObject);
     });
   })(req, res, next);
 });
