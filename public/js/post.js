@@ -83,12 +83,18 @@ console.log(postData);
           message: postData.postText,
           access_token: pageAccessToken,
         },
-        function(info) {
-          console.log(info);
+        function(response) {
+          console.log(response);
+          if (!response || response.error) {
+            alert('Error occured');
+          } else {
+            // alert('Post ID: ' + response.id);
+            $("#fb-modal").modal();
+        
+          }
         }
       );
     }
   );
   {scope: 'manage_pages publish_pages';}
-  // );
 }
