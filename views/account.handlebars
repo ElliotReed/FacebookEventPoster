@@ -6,8 +6,8 @@
 
 	{{!-- Page Header --}}
 	<div class="page-header">
-		<h1>Hello {{firstname}} {{lastname}}, welcome to your events page</h1>
-        <div class="userID">{{userId}}</div>
+		<h3>Hello {{firstname}} {{lastname}}, welcome to your events page</h3>
+        <div class="userID" style="display: none">{{userId}}</div>
 	</div>
 
 	{{!-- Event container --}}
@@ -15,8 +15,8 @@
     {{#each event}}
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h2 class="panel-title"><b>{{title}}</b>{{date}} {{start}} - {{end}}</small>
-                     <button class="fb-button btn btn-primary" data-id="{{ id }}">Post to Facebook</button>
+                <h2 class="panel-title"><strong>{{title}}</strong>:  <span id="date">{{date}}</span>  <span id="start-time">{{start}}</span> - <span id="end-time">{{end}}</span>
+                     <button class="fb-button btn btn-primary facebook-post clearfix" data-id="{{ id }}">Post to Facebook</button>
                 </h2>
             </div>
             <div class="panel-body">

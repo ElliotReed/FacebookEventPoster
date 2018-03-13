@@ -1,3 +1,7 @@
+// Use the year in the footer
+var year = moment().format('YYYY');
+$("#year").text(year);
+
 // var eventId = 2;
 $('.fb-button').on('click', function() {
   eventId = $(this).attr("data-id")
