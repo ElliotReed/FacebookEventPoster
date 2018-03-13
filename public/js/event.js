@@ -72,7 +72,7 @@ $(document).ready(function() {
   });
 
   // Delete button will delete an event
-  $("#delete-event").on("click", function(event) {
+  $(".delete-event").on("click", function(event) {
     // Prevent page from reloading on click
     event.preventDefault();
     
