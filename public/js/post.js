@@ -67,7 +67,7 @@ function fbPostIt(postData) {
           console.log(resp);
         }
       );
-
+console.log(postData);
       // find the page access token for the page we want to admin
       var pageAccessToken = '';
       for (var i in response.data) {

@@ -21,7 +21,7 @@ $('.fb-button').on('click', function() {
       eventData.description + '\n' +
       (eventData.public ? 'This event is open to the public, come on out!' : 'This is a private event.');
     // console.log(postText);
-    var postData = { postText: postText, pageId: eventData.pageId };
+    var postData = { postText: postText, pageId: eventData.Client.pageId };
     console.log(postData);
 
     fbPostIt(postData);
