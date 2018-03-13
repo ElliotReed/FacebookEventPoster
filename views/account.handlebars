@@ -16,15 +16,16 @@ facebook, must be at the top --}}
         <div class="panel panel-default">
             <div class="panel-heading">
 
-                <h2 class="panel-title">{{title}}:  {{date}} {{start}} - {{end}}
+                <h2 class="panel-title"><strong>{{title}}</strong>:  <span id="date">{{date}}</span>  <span id="start-time">{{start}}</span> - <span id="end-time">{{end}}</span>
+
                      <button class="fb-button btn btn-primary facebook-post clearfix" data-id="{{ id }}"><i class="fab fa-facebook-square"></i> Post to Facebook</button>
                 </h2>
             </div>
             <div class="panel-body">
                 Location: {{location}}
                 <p>{{description}}</p>
-                <button class="btn btn-info" id="edit-event" data-id="{{id}}">EDIT</button>
-                <button class="btn btn-danger" id="delete-event" data-id="{{id}}">DELETE!</button>
+                <button class="btn btn-info edit-event" id="edit-event" data-id="{{id}}">EDIT</button>
+                <button class="btn btn-danger delete-event" data-id="{{id}}">DELETE!</button>
             </div>
         </div>
         {{/each}}
