@@ -13,8 +13,20 @@
 		<input type="text" class="form-control" placeholder="Last Name" name="lastname">
 	</div>
 	<div class="form-group">
-		<label>Page ID <span id="pageIdHelp" class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></label>
+		<label>Page ID <span id="pageIdHelp" class="glyphicon glyphicon-question-sign" aria-hidden="true" data-tooltip-content="#tooltip_content"></span></label>
 		<input type="text" class="form-control" placeholder="Page ID" name="pageid">
+	{{!-- Tooltip html --}}
+	<div class="tooltip_templates">
+		<span id="tooltip_content">
+			<strong>To find your Page ID:</strong>
+			<ul>
+				<li>Go to your Page and click <strong>About</strong> in the left column</li>
+				<li>Scroll down to find your Page ID below <strong>More Info</strong></li>
+			</ul>
+
+		</span>
+	</div>
+
 	</div>
 	<div class="form-group">
 		<label>Email</label>
