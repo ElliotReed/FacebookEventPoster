@@ -5,20 +5,37 @@
 	<meta charset="UTF-8">
 	<title>Facebook Event Poster</title>
 	{{!-- Font Awesome for FB logo --}}
-	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script> {{!-- Bootstrap styling --}}
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script> 
+    {{!-- Google font --}}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100&effect=neon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Poiret+One" rel="stylesheet">
+    {{!-- Bootstrap styling --}}
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	{{!-- Bootstrap styling --}}
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	 crossorigin="anonymous"> {{!-- jQuery --}}
-	<script src="https://code.jquery.com/jquery.js"></script> {{!-- Bootstrap JS --}}
-	<!-- Latest compiled and minified JavaScript -->
+	 crossorigin="anonymous">
+	 {{!-- jQuery --}}
+	<script src="https://code.jquery.com/jquery.js"></script>
+	{{!-- Bootstrap JS --}}
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 	 crossorigin="anonymous"></script>
+
 	{{!-- Event js --}}
 	{{!-- <script src="/js/event.js"></script> --}}
 	{{!-- Client js --}}
 	{{!-- <script src="/js/client.js"></script> --}}
+    <!-- Moment.js Reference -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
 	{{!-- Our Custom Style Sheet --}}
-	<link rel="stylesheet" href="/css/styles.css" type="text/css" /> {{!-- Our Custom Favicon --}}
+	<link rel="stylesheet" href="/css/styles.css" type="text/css" />
+	{{!-- Our Custom Favicon --}}
 	<link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
+
+    
 </head>
 
 <body>
@@ -37,25 +54,17 @@
                     </li>
                 </ul>
             </nav>
-            <h1 class="text-muted"><a href="/">Facebook Event Poster</a></h1>
+            <h1 class="text-muted"><a href="/"><i class="fab fa-facebook-f"></i>acebook Event Poster</a></h1>
         </div>
 
         <div class="row">
             <div class="col-lg-12">
-                {{#if success_msg}}
-                <div class="alert alert-success">{{success_msg}}</div>
-                {{/if}} {{#if error_msg}}
-                <div class="alert alert-danger">{{error_msg}}</div>
-                {{/if}} {{#if error}}
-                <div class="alert alert-danger">{{error}}</div>
-                {{/if}} 
-                
                 {{{body}}}
             </div>
         </div>
 
         <footer class="footer text-center">
-            <p>&copy; 2018 Facebook Event Poster</p>
+            <p>Copyright &copy; <i class="fab fa-facebook-f"></i>acebook Event Poster <span id="year"></span></p>
         </footer>
 
     </div>
