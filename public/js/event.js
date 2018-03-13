@@ -38,7 +38,7 @@ $(document).ready(function() {
   });
 
   // Edit button will allow user to edit event
-  $("#edit-event").on("click", function(event) {
+  $(".edit-event").on("click", function(event) {
     // Prevent page from reloading on click
     event.preventDefault();
 
