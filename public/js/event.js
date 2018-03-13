@@ -90,7 +90,6 @@ $(document).ready(function() {
     ); 
   });
 
-
   // // The code below handles the case where we want to get blog events for a specific client
   // // Looks for a query param in the url for client_id
   // var url = window.location.search;
